@@ -38,7 +38,7 @@ if choice == 'Upload':
     st.title('Upload Here')
     file = st.file_uploader('Upload your regression dataset')
     if file:
-        data = pd.read_csv(file, index_col=None, sep=';')
+        data = pd.read_csv(file, index_col=None)
         st.dataframe(data.sample(8))
         data.to_csv('dataset.csv', index=None)
     try: 
